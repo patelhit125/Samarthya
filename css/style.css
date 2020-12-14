@@ -14,6 +14,15 @@
 
 body {
   font-family: 'Poppins-Regular', Fallback, sans-serif;
+  background: #FFF;
+}
+
+h2 a:hover:before {
+  content: '';
+  position: fixed;
+  display: block;
+  top: 0; bottom: 0; left: 0; right: 0;
+  z-index: -1;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -21,10 +30,54 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
 }
 
-h1 {
-  font-size: 5rem;
+h1, h2 {
   font-family: 'BebasNeue-Regular', Fallback, sans-serif;
   font-weight: bold;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 a {
+  font-weight: normal;
+  -webkit-text-stroke: 1px #000000;
+  color: transparent;
+}
+
+.jobs:hover {
+  color: #0045FE;
+  -webkit-text-stroke: 1px #0045FE;
+}
+
+.healthcare:hover {
+  color: #00D167;
+  -webkit-text-stroke: 1px #00D167;
+}
+
+.education:hover {
+  color: #FF2323;
+  -webkit-text-stroke: 1px #FF2323;
+}
+
+.jobs:hover:before {
+  background-color: #DFEDFF;
+}
+
+.healthcare:hover:before {
+  background-color: #BFF4D9;
+}
+
+.education:hover:before {
+  background-color: #FFC8C8;
 }
 
 .colorPrimary {
@@ -168,7 +221,7 @@ nav {
   z-index: -1;
   font-family: 'BebasNeue-Regular', Fallback, sans-serif;
   font-size: 10rem;
-  -webkit-text-stroke: 1px #000000;
+  -webkit-text-stroke: 1px #DFDFDF;
   color: transparent;
 }
 
@@ -178,6 +231,28 @@ nav {
   font-family: 'BebasNeue-Regular', Fallback, sans-serif;
   font-weight: bold;
   font-size: 2.5rem;
+}
+
+.navLink {
+  position: relative;
+  margin: auto 1rem;
+}
+
+.navLink:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.navLink:hover:before {
+  visibility: visible;
+  width: 100%;
 }
 
 nav a, #navbarContainer a {
@@ -200,10 +275,6 @@ nav a, #navbarContainer a {
   align-items: center;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.navLink {
-  padding: 0 1rem;
 }
 
 .navButton {
@@ -298,14 +369,123 @@ nav a, #navbarContainer a {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
 }
 
-.coloumn {
-  position: relative;
-  width: 100%;
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
-  max-width: 50%;
+.gutterRow {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+.gutter {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .coloumn-2 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  .coloumn-3 {
+    -ms-flex: 0 0 31.949%;
+    flex: 0 0 31.949%;
+    max-width: 31.949%;
+  }
+
+  .hideD {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hideM {
+    display: none !important;
+  }
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  justify-content: center;
+}
+
+.marginT {
+  margin-top: 3rem;
+}
+
+.imageFluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.scrollDown {
+  font-size: 0.6em;
+  border: 2px solid #000;
+  display: block;
+  position: absolute;
+  width: 1.7em;
+  height: 2.8em;
+  border-radius: 0.9em;
+  bottom: 0;
+  right: 20px;
+  text-decoration: none;
+  transition: border 0.2s ease-out;
+}
+
+.scrollDown:hover {border: 2px solid #777;}
+
+.scrollDown span {
+  display: block;
+  background: #0004FE;
+  width: 0.4em;
+  height: 0.4em;
+  margin: 0.7em auto 0;
+  border-radius: 0.5em;
+}
+
+.scrollDown span {
+  -webkit-animation-name: scroll;
+  animation-name: scroll;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-timing-function: cubic-bezier(0.65, -0.55, 0.25, 1.5);
+  animation-timing-function: cubic-bezier(0.65, -0.55, 0.25, 1.5);
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.scrollDown:hover span {
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+}
+
+@-webkit-keyframes scroll {
+  0%, 20% {
+    -webkit-transform: translateY(0) scaleY(1);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(1.2em) scaleY(1.5);
+    opacity: 0.01;
+  }
+}
+
+@keyframes scroll {
+  0%, 20% {
+    transform: translateY(0) scaleY(1);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(1.2em) scaleY(1.5);
+    opacity: 0.01;
+  }
 }
