@@ -33,21 +33,21 @@ h2 a:hover:before {
   z-index: -1;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3 {
   margin-bottom: 0;
   margin-top: 0;
 }
 
-h1, h2 {
+h1, h2, .h1, .h2 {
   font-family: 'BebasNeue-Regular', Fallback, sans-serif;
   font-weight: bold;
 }
 
-h1 {
+h1, .h1 {
   font-size: 5rem;
 }
 
-h2 {
+h2, .h2 {
   font-size: 4rem;
 }
 
@@ -380,8 +380,8 @@ nav a, #navbarContainer a {
 }
 
 .gutterRow {
-  margin-left: -0.5rem;
-  margin-right: -0.5rem;
+  margin-left: 0;
+  margin-right: 0;
   flex-direction: row;
   flex-wrap: nowrap;
   overflow-x: scroll;
@@ -393,6 +393,14 @@ nav a, #navbarContainer a {
   margin-top: 3rem;
 }
 
+.gutter:first-of-type {
+  margin-left: -0.5rem;
+}
+
+.gutter:last-of-type {
+  margin-right: -0.5rem;
+}
+
 @media (min-width: 768px) {
   .coloumn-2 {
     -ms-flex: 0 0 50%;
@@ -401,13 +409,25 @@ nav a, #navbarContainer a {
   }
   
   .coloumn-3 {
-    -ms-flex: 0 0 31.949%;
-    flex: 0 0 31.949%;
-    max-width: 31.949%;
+    -ms-flex: 0 0 31%;
+    flex: 0 0 31%;
+    max-width: 31%;
+  }
+  
+  .coloumn-4 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+    text-align: center;
   }
 
   .hideD {
     display: none !important;
+  }
+
+  #totalConfirmed::before, #totalActive::before, #totalRecovered::before, #totalDeceased::before {
+    content: '\A';
+    white-space: pre;
   }
 }
 
@@ -420,6 +440,13 @@ nav a, #navbarContainer a {
     -ms-flex: 0 0 90%;
     flex: 0 0 90%;
     max-width: 90%;
+  }
+
+  .coloumn-4 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: left;
   }
 }
 
@@ -505,4 +532,23 @@ nav a, #navbarContainer a {
     transform: translateY(1.2em) scaleY(1.5);
     opacity: 0.01;
   }
+}
+
+#dailyConfirmed::before, #dailyActive::before, #dailyRecovered::before, #dailyDeceased::before {
+  content: '+';
+}
+
+.newsLink {
+  text-decoration: none;
+  color: #000;
+}
+
+.newsLink:hover {
+  text-decoration: underline;
+  color: #0004FE;
+}
+
+.newsLink:hover .newsImage {
+  opacity: 0.6;
+  transition: .5s ease;
 }
