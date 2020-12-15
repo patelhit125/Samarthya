@@ -17,6 +17,14 @@ body {
   background: #FFF;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 h2 a:hover:before {
   content: '';
   position: fixed;
