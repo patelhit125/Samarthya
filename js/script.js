@@ -37,11 +37,24 @@ $(document).ready(function () {
     }, 500);
   });
 
-  $.getJSON("http://newsapi.org/v2/top-headlines?country=in&apiKey=8fc49f9f51894ea399ce1a2317312de6", function(json) {
-    $.each(json.articles, function(index) {
-      if(json.articles[index].urlToImage != null) {
-        $('#news').append('<div class="coloumn-3 gutter"><img src="' + json.articles[index].urlToImage + '" alt="" class="imageFluid"><div></div>' + json.articles[index].title + '</div>');
-      }
+  const settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://bing-news-search1.p.rapidapi.com/news/search?q=covid19,india&freshness=Day&textFormat=Raw&safeSearch=Off",
+    "method": "GET",
+    "headers": {
+      "x-bingapis-sdk": "true",
+      "x-rapidapi-key": "5081e8c365msh8de4c5704f94427p1bb7d5jsn088bd89ba27b",
+      "x-rapidapi-host": "bing-news-search1.p.rapidapi.com"
+    }
+  };
+  
+  $.ajax(settings).done(function (json) {
+    var html = '<div class="row gutterRow">';
+    $.each(json.value, function(index) {
+        html += '<div class="coloumn-3 gutter"><img src="' + json.value[index].image.thumbnail.contentUrl + '&w=412&h=264&c=14&rs=2&qlt=100&dpr=1.5"  alt="' + json.value[index].name + '" class="imageFluid"><div>' + json.value[index].name + '</div></div>';
     });
+    html += '</div>';
+    $('#news').append(html);
   });
 });

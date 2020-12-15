@@ -382,6 +382,9 @@ nav a, #navbarContainer a {
 .gutterRow {
   margin-left: -0.5rem;
   margin-right: -0.5rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
 }
 
 .gutter {
@@ -411,6 +414,12 @@ nav a, #navbarContainer a {
 @media (max-width: 768px) {
   .hideM {
     display: none !important;
+  }
+
+  .coloumn-3 {
+    -ms-flex: 0 0 90%;
+    flex: 0 0 90%;
+    max-width: 90%;
   }
 }
 
