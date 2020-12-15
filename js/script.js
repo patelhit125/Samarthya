@@ -44,7 +44,7 @@ $(document).ready(function () {
     "method": "GET",
     "headers": {
       "x-bingapis-sdk": "true",
-      "x-rapidapi-key": "5081e8c365msh8de4c5704f94427p1bb7d5jsn088bd89ba27b",
+      "x-rapidapi-key": "bbc60bc76cmsh956c8c50f775e04p1877e5jsn2bc502c14bb9",
       "x-rapidapi-host": "bing-news-search1.p.rapidapi.com"
     }
   };
