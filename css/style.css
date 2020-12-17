@@ -15,6 +15,11 @@
 body {
   font-family: 'Poppins-Regular', Fallback, sans-serif;
   background: #FFF;
+  color: #121212;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 input,
@@ -57,7 +62,7 @@ a {
 
 h2 a {
   font-weight: normal;
-  -webkit-text-stroke: 1px #000000;
+  -webkit-text-stroke: 1px #121212;
   color: transparent;
 }
 
@@ -253,7 +258,7 @@ nav {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #000;
+  background-color: #121212;
   visibility: hidden;
   transition: all 0.3s ease-in-out;
 }
@@ -264,7 +269,7 @@ nav {
 }
 
 nav a, #navbarContainer a {
-  color: #000000;
+  color: #121212;
   text-decoration: none;
 }
 
@@ -324,7 +329,7 @@ nav a, #navbarContainer a {
   position: absolute;
   height: 3px;
   width: 35px;
-  background: #000000;
+  background: #121212;
   border-radius: 3px;
   opacity: 1;
   left: -5px;
@@ -390,7 +395,6 @@ nav a, #navbarContainer a {
 .gutter {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  margin-top: 3rem;
 }
 
 .gutter:first-of-type {
@@ -461,6 +465,10 @@ nav a, #navbarContainer a {
   margin-top: 3rem;
 }
 
+.marginT2 {
+  margin-top: 6rem;
+}
+
 .imageFluid {
   max-width: 100%;
   height: auto;
@@ -468,7 +476,7 @@ nav a, #navbarContainer a {
 
 .scrollDown {
   font-size: 0.6em;
-  border: 2px solid #000;
+  border: 2px solid #121212;
   display: block;
   position: absolute;
   width: 1.7em;
@@ -540,7 +548,7 @@ nav a, #navbarContainer a {
 
 .newsLink {
   text-decoration: none;
-  color: #000;
+  color: #121212;
 }
 
 .newsLink:hover {

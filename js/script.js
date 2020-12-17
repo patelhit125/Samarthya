@@ -37,22 +37,12 @@ $(document).ready(function () {
     }, 500);
   });
 
-  const settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://bing-news-search1.p.rapidapi.com/news/search?q=covid19,india&freshness=Day&textFormat=Raw&safeSearch=Off",
-    "method": "GET",
-    "headers": {
-      "x-bingapis-sdk": "true",
-      "x-rapidapi-key": "bbc60bc76cmsh956c8c50f775e04p1877e5jsn2bc502c14bb9",
-      "x-rapidapi-host": "bing-news-search1.p.rapidapi.com"
-    }
-  };
-  
-  $.ajax(settings).done(function (json) {
+  $.ajax("https://api.nytimes.com/svc/search/v2/articlesearch.json?q=india&api-key=K7jlMnbGHMdEotmeDIgA84zDij4yyjwB").done(function (json) {
     var html = '<div class="row gutterRow">';
-    $.each(json.value, function(index) {
-        html += '<div class="coloumn-3 gutter"><a class="newsLink" href="' + json.value[index].url + '" target="_blank" rel="noopener noreferrer"><img src="' + json.value[index].image.thumbnail.contentUrl + '&w=412&h=264&c=14&rs=2&qlt=100&dpr=1.5"  alt="' + json.value[index].name + '" class="imageFluid newsImage"><div>' + json.value[index].name + '</a></div></div>';
+    $.each(json.response.docs, function (index) {
+      if (json.response.docs[index].multimedia.length > 0) {
+        html += '<div class="coloumn-3 gutter"><a class="newsLink" href="' + json.response.docs[index].web_url + '" target="_blank" rel="noopener noreferrer"><img src="https://static01.nyt.com/' + json.response.docs[index].multimedia[44].url + '" alt="News image: ' + (index+1) + '" class="imageFluid newsImage"><div>' + json.response.docs[index].abstract + '</a></div></div>';
+      }
     });
     html += '</div>';
     $('#news').append(html);
@@ -63,7 +53,7 @@ $(document).ready(function () {
     if (dailyactive_ > 0) {
       dailyactive = dailyactive_;
     } else {
-      dailyactive_ = 0;
+      dailyactive = 0;
     }
     $("#totalConfirmed").html(Number(data.statewise[0].confirmed).toLocaleString('en-IN'));
     $("#totalActive").html(Number(data.statewise[0].active).toLocaleString('en-IN'));
@@ -72,12 +62,12 @@ $(document).ready(function () {
     $("#dailyRecovered").html(Number(data.statewise[0].deltarecovered).toLocaleString('en-IN'));
     $("#dailyConfirmed").html(Number(data.statewise[0].deltaconfirmed).toLocaleString('en-IN'));
     $("#dailyDeceased").html(Number(data.statewise[0].deltadeaths).toLocaleString('en-IN'));
-    $("#dailyActive").html(Number(dailyactive).toLocaleString('en-IN'));
-    $("#lastUpdated").html("Last update: " + data.statewise[0].lastupdatedtime);
+    $("#dailyActive").html(dailyactive);
+    $("#lastUpdated").html("<div class='bold'>COVID-19 CASES</div><div>Last update: " + data.statewise[0].lastupdatedtime);
+
+    $('.counter').counterUp({
+      delay: 10,
+      time: 500
+    });
   });
 });
-
-(function($) {
-  'use strict';
-  $('.count-num').rCounter();
-})(jQuery);
