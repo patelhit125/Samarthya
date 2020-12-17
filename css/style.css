@@ -12,7 +12,7 @@
        url('../fonts/Poppins-Regular.ttf')  format('truetype')
 }
 
-body {
+html, body {
   font-family: 'Poppins-Regular', Fallback, sans-serif;
   background: #FFF;
   color: #121212;
@@ -563,4 +563,13 @@ nav a, #navbarContainer a {
 .newsLink:hover .newsImage {
   opacity: 0.6;
   transition: .5s ease;
+}
+
+.newsText {
+  max-height: 96px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }

@@ -41,7 +41,7 @@ $(document).ready(function () {
     var html = '<div class="row gutterRow">';
     $.each(json.response.docs, function (index) {
       if (json.response.docs[index].multimedia.length > 0) {
-        html += '<div class="coloumn-3 gutter"><a class="newsLink" href="' + json.response.docs[index].web_url + '" target="_blank" rel="noopener noreferrer"><img src="https://static01.nyt.com/' + json.response.docs[index].multimedia[44].url + '" alt="News image: ' + (index+1) + '" class="imageFluid newsImage"><div>' + json.response.docs[index].abstract + '</a></div></div>';
+        html += '<div class="coloumn-3 gutter"><a class="newsLink" href="' + json.response.docs[index].web_url + '" target="_blank" rel="noopener noreferrer"><img src="https://static01.nyt.com/' + json.response.docs[index].multimedia[44].url + '" alt="News image: ' + (index+1) + '" class="imageFluid newsImage"><div class="newsText">' + json.response.docs[index].abstract + '</a></div></div>';
       }
     });
     html += '</div>';
