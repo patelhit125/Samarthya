@@ -17,6 +17,18 @@ html, body {
   color: #121212;
 }
 
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+ 
+body::-webkit-scrollbar-track {
+  background-color: #121212;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #0004FE;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -206,15 +218,27 @@ nav {
 
 #navbarContainer {
   z-index: 20;
-  background-color: #FFFFFF;
   font-family: 'BebasNeue-Regular', Fallback, sans-serif;
   display: none;
   position: fixed;
-  width: 100%;
-  height: 100%;
+  left: 0;
+  right: 0;
   top: 0;
   bottom: 0;
-  padding-top: 10rem;
+}
+
+#navbarContainer .container {
+  padding-right: 20px;
+  padding-left: 20px;
+  display: flex;
+  position: absolute;
+  background-color: #FFFFFF;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  justify-content: center;
+  flex-direction: column;
 }
 
 #navbarContainer.open {
@@ -607,6 +631,23 @@ nav a, #navbarContainer a {
   text-decoration: underline;
 }
 
+.follow {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.followLink {
+  margin: auto 1rem;
+}
+
+.followLink:hover {
+  color: #0004FE !important;
+}
+
+.navFollowLinks {
+  margin-top: 5rem;
+}
+
 hr {
   border-top: 0;
   margin-top: 4rem;
@@ -617,7 +658,7 @@ hr {
   text-align: center;
 }
 
-.copyrights a {
+.copyrights a, .footer .followLink {
   color: #DFDFDF;
 }
 

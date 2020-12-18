@@ -89,4 +89,6 @@ $(document).ready(function () {
       time: 500
     });
   });
+
+  feather.replace()
 });
