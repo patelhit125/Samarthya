@@ -38,14 +38,33 @@ $(document).ready(function () {
   });
 
   $.ajax("https://api.nytimes.com/svc/search/v2/articlesearch.json?q=india&api-key=K7jlMnbGHMdEotmeDIgA84zDij4yyjwB").done(function (json) {
-    var html = '<div class="row gutterRow">';
+    var html = '<div class="row gutterRow" id="gutterRow">';
     $.each(json.response.docs, function (index) {
       if (json.response.docs[index].multimedia.length > 0) {
-        html += '<div class="coloumn-3 gutter"><a class="newsLink" href="' + json.response.docs[index].web_url + '" target="_blank" rel="noopener noreferrer"><img src="https://static01.nyt.com/' + json.response.docs[index].multimedia[44].url + '" alt="News image: ' + (index+1) + '" class="imageFluid newsImage"><div class="newsText">' + json.response.docs[index].abstract + '</a></div></div>';
+        var imageUrl = "";
+        for(key in json.response.docs[index].multimedia) {
+          if(json.response.docs[index].multimedia[key].subtype == "threeByTwoMediumAt2X") {
+            imageUrl = json.response.docs[index].multimedia[key].url;
+          }
+        }
+        html += '<div class="coloumn-3 gutter"><a class="newsLink" href="' + json.response.docs[index].web_url + '" target="_blank" rel="noopener noreferrer"><img src="https://static01.nyt.com/' + imageUrl + '" alt="News image: ' + (index + 1) + '" class="imageFluid newsImage"><div class="newsText">' + json.response.docs[index].abstract + '</a></div></div>';
       }
     });
     html += '</div>';
     $('#news').append(html);
+
+    function scrollHorizontally(e) {
+      e = window.event || e;
+      var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+      document.getElementById('gutterRow').scrollLeft -= (delta * 100);
+      e.preventDefault();
+    }
+    if (document.getElementById('gutterRow').addEventListener) {
+      document.getElementById('gutterRow').addEventListener("mousewheel", scrollHorizontally, false);
+      document.getElementById('gutterRow').addEventListener("DOMMouseScroll", scrollHorizontally, false);
+    } else {
+      document.getElementById('gutterRow').attachEvent("onmousewheel", scrollHorizontally);
+    }
   });
 
   $.ajax("https://api.covid19india.org/data.json").done(function (data) {
