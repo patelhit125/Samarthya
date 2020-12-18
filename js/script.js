@@ -56,7 +56,7 @@ $(document).ready(function () {
     function scrollHorizontally(e) {
       e = window.event || e;
       var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-      document.getElementById('gutterRow').scrollLeft -= (delta * 100);
+      document.getElementById('gutterRow').scrollLeft -= (delta * 50);
       e.preventDefault();
     }
     if (document.getElementById('gutterRow').addEventListener) {
