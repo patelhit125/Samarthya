@@ -54,4 +54,9 @@ $(document).ready(function () {
       time: 500
     });
   });
+
+  $('.readMore').readmore({
+    speed: 75,
+    lessLink: '<a href="#">Read less</a>'
+  });
 });
