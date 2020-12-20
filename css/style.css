@@ -33,6 +33,12 @@ body::-webkit-scrollbar-thumb {
   font-weight: bold;
 }
 
+.font {
+  font-family: 'BebasNeue-Regular', Fallback, sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
 input,
 textarea,
 button,
@@ -447,6 +453,12 @@ nav a, #navbarContainer a {
     max-width: 31%;
   }
   
+  .coloumn-3m {
+    -ms-flex: 0 0 33.33333333%;
+    flex: 0 0 33.33333333%;
+    max-width: 33.33333333%;
+  }
+  
   .coloumn-4 {
     -ms-flex: 0 0 25%;
     flex: 0 0 25%;
@@ -466,6 +478,10 @@ nav a, #navbarContainer a {
   .footerLinks {
     margin-left: 5rem;
   }
+
+  .marginR {
+    margin-right: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -483,6 +499,12 @@ nav a, #navbarContainer a {
     -ms-flex: 0 0 90%;
     flex: 0 0 90%;
     max-width: 90%;
+  }
+
+  .coloumn-3m {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 
   .coloumn-4 {
@@ -526,10 +548,6 @@ nav a, #navbarContainer a {
 
 .marginTs {
   margin-top: 1rem;
-}
-
-.marginR {
-  margin-right: 2rem;
 }
 
 .imageFluid {
@@ -770,6 +788,7 @@ input {
 
 #jobs .card {
   background-color: #DFEDFF;
+  border: 3px solid #0004FE;
 }
 
 #jobs .card:hover {
@@ -778,8 +797,13 @@ input {
 
 #education .card {
   background-color: #FFC8C8;
+  border: 3px solid #FF2323;
 }
 
 #education .card:hover {
   background-color: #FF2323;
+}
+
+.centerText {
+  text-align: center;
 }
