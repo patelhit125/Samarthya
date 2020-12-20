@@ -77,17 +77,17 @@ h2 a {
   color: transparent;
 }
 
-.jobs:hover {
+.jobs:hover, .jobsTitle {
   color: #0045FE;
   -webkit-text-stroke: 1px #0045FE;
 }
 
-.healthcare:hover {
+.healthcare:hover, .healthcareTitle {
   color: #00D167;
   -webkit-text-stroke: 1px #00D167;
 }
 
-.education:hover {
+.education:hover, .educationTitle {
   color: #FF2323;
   -webkit-text-stroke: 1px #FF2323;
 }
@@ -742,6 +742,7 @@ hr {
   text-align: center;
   background-color: #ddd;
   color: #121212;
+  line-height: 10px;
 }
 
 input {
@@ -753,4 +754,32 @@ input {
   vertical-align: middle;
   font-family: 'Poppins-Regular', sans-serif;
   font-size: larger;
-}	
+}
+
+.card {
+  transition: 0.3s;
+}
+
+.card:hover {
+  color: #fff;
+}
+
+.cardContainer {
+  padding: 2px 16px;
+}
+
+#jobs .card {
+  background-color: #DFEDFF;
+}
+
+#jobs .card:hover {
+  background-color: #0004FE;
+}
+
+#education .card {
+  background-color: #FFC8C8;
+}
+
+#education .card:hover {
+  background-color: #FF2323;
+}
