@@ -28,9 +28,9 @@
       <div class="navCollapse">
         <div class="navCollapse">
           <div class="navbarNav">
-            <a class="navLink active" href="#">Home</a>
-            <a class="navLink scrollLink" href="#news">News</a>
-            <a class="navLink" href="contact.html">Contact</a>
+            <a class="navLink" href="index.html">Home</a>
+            <a class="navLink" href="index.html#news">News</a>
+            <a class="navLink active" href="#">Contact</a>
             <a class="navLink" href="about.html">About</a>
           </div>
           <a class="navButton button" href="donate.html"><span class="buttonText">DONATE</span><span
@@ -48,9 +48,9 @@
     <div id="navbarContainer">
       <div class="navText"></div>
       <div class="container">
-        <a href="#"><h1 class="active">HOME</h1></a>
-        <a class="scrollLink" href="#news"><h1>NEWS</h1></a>
-        <a href="contact.html"><h1>CONTACT</h1></a>
+        <a href="index.html"><h1>HOME</h1></a>
+        <a href="index.html#news"><h1>NEWS</h1></a>
+        <a href="#"><h1 class="active">CONTACT</h1></a>
         <a href="about.html"><h1>ABOUT</h1></a>
         <div class="follow navFollowLinks">
           <a href="#"  target="_blank" rel="noopener noreferrer" class="followLink"><i data-feather="instagram"></i></a>
@@ -61,46 +61,35 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="coloumn-2 center">
+    <div class="row marginT2">
+      <div class="coloumn-2">
         <h1><span class="colorPrimary">S</span>AMARTHYA.</h1>
         <div>
           A non-profit initiative. We make it happen.
         </div>
-        <h2 class="marginT"><a class="jobs" href="#">JOBS</a></h2>
-        <h2><a class="healthcare" href="#">HEALTHCARE</a></h2>
-        <h2><a class="education" href="#">EDUCATION</a></h2>
-      </div>
-      <div class="coloumn-2 center hideM">
-        <img src="https://source.unsplash.com/random/1400x1000/?education, unemployment, healthcare" class="imageFluid"
-          alt="">
-      </div>
-    </div>
-
-    <a class="scrollDown hideD" href="#numbers" title="Scroll Down"><span></span></a>
-
-    <div class="marginT">
-      <h1 id="numbers"><span class="colorPrimary">N</span>UMBERS.</h1>
-      <div id="lastUpdated"></div>
-      <div class="row marginT-M">
-        <div class="coloumn-4">
-          Confirmed <span class="h2 counter" id="totalConfirmed">0</span><span id="dailyConfirmed">+0</span>
-        </div>
-        <div class="coloumn-4">
-          Active <span class="h2 counter" id="totalActive">0</span><span id="dailyActive">+0</span>
-        </div>
-        <div class="coloumn-4">
-          Recovered <span class="h2 counter" id="totalRecovered">0</span><span id="dailyRecovered">+0</span>
-        </div>
-        <div class="coloumn-4">
-          Deceased <span class="h2 counter" id="totalDeceased">0</span><span id="dailyDeceased">+0</span>
+        <div>
+          <address class="marginT">
+            Celeste Slater<br>
+            606-3727 Ullamcorper. Street<br>
+            Roseville NH 11523<br>
+            (786) 713-8616<br>
+            patelhit125@gmail.com
+          </address>
+          <div class="marginTs">
+            <h4>Have any query</h4>
+            <a href="mailto:parelhit125@gmail.com" class="link">Tell us about it &#10230;</a>
+          </div>
+          <form class="marginTs">
+            <div>
+              <label for="suggestions">Have any suggestions</label>
+              <textarea class="formTextArea" id="suggestions"></textarea>
+            </div>
+          </form>
         </div>
       </div>
-    </div>
-
-    <div class="marginT2 news" id="news">
-      <h1><span class="colorPrimary">L</span>ATEST NEWS.</h1>
-      <div id="news"></div>
+      <div class="coloumn-2 marginT-M">
+        <div id="map">Map</div>
+      </div>
     </div>
 
     <div class="marginT2 footer">
@@ -116,9 +105,9 @@
         <div class="coloumn-2">
           <div class="footerLinks">
             <h3>LINKS</h3>
-            <a href="#">HOME &#10230;</a>
-            <a class="scrollLink" href="#news">NEWS &#10230;</a>
-            <a href="contact.html">CONTACT &#10230;</a>
+            <a href="index.html">HOME &#10230;</a>
+            <a href="index.html#news">NEWS &#10230;</a>
+            <a href="#">CONTACT &#10230;</a>
             <a href="about.html">ABOUT &#10230;</a>
           </div>
         </div>
@@ -140,11 +129,10 @@
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
 <script src="https://unpkg.com/feather-icons"></script>
 <script src="./js/script.js"></script>
-<script src="./js/index.js"></script>
+<script src="./js/contact.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfy1qbaakwkTHwznVgPXtNPPHHVmBsBsE&callback=initMap" type="text/javascript"></script>
 <script>
   $(window).on('load', function () {
     $('.loadingSection').slideUp();

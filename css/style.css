@@ -225,20 +225,22 @@ nav {
   right: 0;
   top: 0;
   bottom: 0;
+  background-color: #FFFFFF;
 }
 
 #navbarContainer .container {
+  padding-top: 5rem;
   padding-right: 20px;
   padding-left: 20px;
   display: flex;
   position: absolute;
-  background-color: #FFFFFF;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   justify-content: center;
   flex-direction: column;
+  z-index: 2;
 }
 
 #navbarContainer.open {
@@ -252,9 +254,9 @@ nav {
 .navText:after {
   content: "MENU";
   position: absolute;
-  top: 5px;
+  top: 12rem;
   right: 0;
-  z-index: -1;
+  z-index: 1;
   font-family: 'BebasNeue-Regular', Fallback, sans-serif;
   font-size: 10rem;
   -webkit-text-stroke: 1px #DFDFDF;
@@ -471,6 +473,12 @@ nav a, #navbarContainer a {
     display: none !important;
   }
 
+  .coloumn-2 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
   .coloumn-3 {
     -ms-flex: 0 0 90%;
     flex: 0 0 90%;
@@ -491,8 +499,13 @@ nav a, #navbarContainer a {
   .footerLinks {
     margin-top: 3rem;
   }
+
   .api {
     text-align: center !important;
+  }
+
+  .formTextArea {
+    width: 100% !important;
   }
 }
 
@@ -509,6 +522,14 @@ nav a, #navbarContainer a {
 
 .marginT2 {
   margin-top: 6rem;
+}
+
+.marginTs {
+  margin-top: 1rem;
+}
+
+.marginR {
+  margin-right: 2rem;
 }
 
 .imageFluid {
@@ -627,7 +648,7 @@ nav a, #navbarContainer a {
   margin-top: 1rem;
 }
 
-.footerLinks a:hover {
+.footerLinks a:hover, .toTop:hover, .link:hover {
   text-decoration: underline;
 }
 
@@ -671,3 +692,65 @@ hr {
   font-size: 10px;
   margin-right: 5px;
 }
+
+.toTop {
+  position: fixed;
+  bottom: 60px;
+  right: -45px;
+  font-size: 13px;
+  transform: rotateZ(-90deg);
+  display: none;
+  color: #777;
+}
+
+#map {
+  height: 430px;
+  width: 100% !important;
+  position: relative;
+  margin-top: 15px;
+}
+
+.formTextArea {
+  width: 80%;
+  border: 2px solid #ccc;
+  border-radius: 0;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+.h100 {
+  display: flex;
+  height: 73vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.minus, .plus{
+  cursor: pointer;
+	width: 8px;
+  height: 8px;
+  border-radius: 0;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  background-color: #ddd;
+  color: #121212;
+}
+
+input {
+	height: 35px;
+  width: 100px;
+  text-align: center;
+	border: 2px solid #ddd;
+  display: inline-block;
+  vertical-align: middle;
+  font-family: 'Poppins-Regular', sans-serif;
+  font-size: larger;
+}	
