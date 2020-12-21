@@ -5,8 +5,8 @@ $(document).ready(function () {
     $.each(json.response.docs, function (index) {
       if (json.response.docs[index].multimedia.length > 0) {
         var imageUrl = "";
-        for(key in json.response.docs[index].multimedia) {
-          if(json.response.docs[index].multimedia[key].subtype == "threeByTwoSmallAt2X") {
+        for (key in json.response.docs[index].multimedia) {
+          if (json.response.docs[index].multimedia[key].subtype == "threeByTwoSmallAt2X") {
             imageUrl = json.response.docs[index].multimedia[key].url;
           }
         }
@@ -28,7 +28,7 @@ $(document).ready(function () {
     } else {
       document.getElementById('gutterRow').attachEvent("onmousewheel", scrollHorizontally);
     }
-  }).error(function() {
+  }).error(function () {
     $('.news').css("display", "none");
   });
 
@@ -59,4 +59,18 @@ $(document).ready(function () {
     speed: 75,
     lessLink: '<a href="#">Read less</a>'
   });
+
+  $('#gutterRow1, #gutterRow2, #gutterRow3').hScroll(100);
 });
+
+$.fn.hScroll = function (amount) {
+  amount = amount || 120;
+  $(this).bind("DOMMouseScroll mousewheel", function (event) {
+    var oEvent = event.originalEvent,
+      direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta,
+      position = $(this).scrollLeft();
+    position += direction > 0 ? -amount : amount;
+    $(this).scrollLeft(position);
+    event.preventDefault();
+  })
+};
