@@ -14,7 +14,7 @@ $(document).ready(function () {
       }
     });
     html += '</div>';
-    $('#news').append(html);
+    $('#newsFeed').html(html);
 
     function scrollHorizontally(e) {
       e = window.event || e;
