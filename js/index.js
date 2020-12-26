@@ -56,7 +56,9 @@ $(document).ready(function () {
   });
 
   $('.readMore').readmore({
-    speed: 75,
+    speed: 300,
+    collapsedHeight:200,
+    collapsedMoreHeight: 400,
     lessLink: '<a href="#">Read less</a>'
   });
 
