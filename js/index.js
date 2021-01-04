@@ -6,7 +6,7 @@ $(document).ready(function () {
       if (json.response.docs[index].multimedia.length > 0) {
         var imageUrl = "";
         for (key in json.response.docs[index].multimedia) {
-          if (json.response.docs[index].multimedia[key].subtype == "threeByTwoSmallAt2X") {
+          if (json.response.docs[index].multimedia[key].subtype == "mediumThreeByTwo440") {
             imageUrl = json.response.docs[index].multimedia[key].url;
           }
         }
